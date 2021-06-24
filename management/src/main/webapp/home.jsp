@@ -7,9 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
+<center>
 		<h1>Employee Management System</h1>
 		<br><br><a href="./employee/loginpage">Login here</a>
 		<br><br><a href="./employee/reg">Register here</a>
-		
+		</center>
 </body>
 </html>
