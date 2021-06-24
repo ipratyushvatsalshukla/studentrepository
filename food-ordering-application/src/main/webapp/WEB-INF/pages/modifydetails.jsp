@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1" isELIgnored="false"%>
 <%@taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,23 +10,42 @@
 	integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
 	crossorigin="anonymous">
 <meta charset="ISO-8859-1">
-<title>Register</title>
+<title>Modify</title>
+<script>
+function myFunction() {
+	  var x = document.getElementById("myInput");
+	  if (x.type === "password") {
+	    x.type = "text";
+	  } else {
+	    x.type = "password";
+	  }
+	}
+</script>
 </head>
 <body class="bg-light">
 	<div class="container">
 		<br>
 		<h2 class="text-center text-primary">Modify Details</h2>
-		<form:form method="post" action="modify/${id}"
-			modelAttribute="newmodify" class="mr-5">
+		<form:form method="post" action="updatedetails"
+			modelAttribute="newcus" class="mr-5">
 			<br>
 			<br>
 
 			<div class="form-group row">
 				<form:label path="id" class="col-sm-2 offset-sm-3">Id</form:label>
 				<div class="col-sm-5">
-					<form:input path="id" class="form-control" />
+					<form:input path="id" class="form-control" readOnly="true" />
 				</div>
 			</div>
+
+			<div class="form-group row">
+				<form:label path="accType" class="col-sm-2 offset-sm-3">Account Type</form:label>
+				<div class="col-sm-5">
+					<form:input path="accType" class="form-control" readOnly="true" />
+				</div>
+			</div>
+
+
 			<div class="form-group row">
 				<form:label path="name" class="col-sm-2 offset-sm-3">Name</form:label>
 				<div class="col-sm-5">
@@ -59,6 +79,14 @@
 				<form:label path="gender" class="col-sm-2 offset-sm-3">Gender</form:label>
 				<div class="col-sm-5">
 					<form:input path="gender" rows="3" cols="30" class="form-control" />
+				</div>
+			</div>
+
+			<div class="form-group row">
+				<form:label path="password" class="col-sm-2 offset-sm-3">Password</form:label>
+				<div class="col-sm-5">
+					<form:input type="password" path="password" class="form-control" id="myInput"/>
+					<input type="checkbox" onclick="myFunction()"> Show Password
 				</div>
 			</div>
 

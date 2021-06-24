@@ -14,13 +14,15 @@
 <body class="bg-light">
 
 	<br>
-	<h1 class="text-center text-primary">Welcome to Our Dashboard !</h1>
+	<h1 class="text-center text-primary">Welcome to the Dashboard
+		${name} !</h1>
 	<br>
 	<br>
-	<a href="./allcustomers" class="btn btn-primary btn-lg ml-2" role="button">Get All customer details</a>
+	<a href="./details?id=${id}" class="btn btn-primary btn-lg ml-2"
+		role="button">Get your details</a>
 	<br>
 	<br>
-
+	<c:if test="${cust!=null}" >
 	<table class="table table-striped">
 		<thead class="thead-light">
 			<tr>
@@ -32,9 +34,8 @@
 				<th scope="col">Customer Address</th>
 			</tr>
 		</thead>
-
-
-		<c:forEach items="${list}" var="cust">
+		
+		
 			<tr>
 				<th scope="row"><c:out value="${cust.id }" /></th>
 				<td><c:out value="${cust.name }" /></td>
@@ -42,12 +43,10 @@
 				<td><c:out value="${cust.gender }" /></td>
 				<td><c:out value="${cust.contact }" /></td>
 				<td><c:out value="${cust.address }" /></td>
-				<td><a href="./delete?id=${cust.id}"class="btn btn-danger" role="button">Delete</a></td>
-				<td><a href="./modify/id=${cust.id}" class="btn btn-info" role="button">Modify</a></td>
+				<td><a href="./modifydetails?id=${cust.id}" class="btn btn-info" role="button">Modify</a></td>
 			</tr>
-		</c:forEach>
-
+		
 	</table>
-
+	</c:if>
 </body>
 </html>

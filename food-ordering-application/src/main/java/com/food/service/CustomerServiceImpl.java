@@ -1,6 +1,7 @@
 package com.food.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -35,21 +36,23 @@ public class CustomerServiceImpl implements CustomerService{
 		List<Customer> list = repo.findAll();
 		return list;
 	}
-
+	
 	@Override
 	public void deleteCustomer(Integer id) {
 		repo.deleteById(id);
 	}
 
 	@Override
-	public Customer updateCustomer(int id, Customer c) {
-		Customer updCustomer = repo.getById(id);
-        updCustomer.setName(c.getName());
-        updCustomer.setAge(c.getAge());
-        updCustomer.setContact(c.getContact());
-        updCustomer.setAddress(c.getAddress());
-        updCustomer.setGender(c.getGender());
-        return repo.save(updCustomer);
+	public Customer updateCustomer(int id) {
+		Optional<Customer> c= repo.findById(id);
+		return c.get();
     }
 
+	@Override
+	public int update(Customer c) {
+		repo.save(c);
+		return c.getId();
+	}
+
+	
 }

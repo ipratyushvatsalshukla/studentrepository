@@ -13,8 +13,10 @@
 </head>
 <body class="bg-light">
 	<div class="container">
-		<br><h2 class="text-center text-success">Fill Details to Login</h2>
-		<form:form method="post" action="./validatelogin" modelAttribute="newlogin">
+		<br>
+		<h2 class="text-center text-success">Login for Access</h2>
+		<form:form method="post" action="./validatelogin"
+			modelAttribute="newlogin">
 			<br>
 			<br>
 
@@ -24,18 +26,30 @@
 					<form:input path="id" class="form-control" />
 				</div>
 			</div>
-			<div class="form-group row">
-				<form:label path="name" class="col-sm-2 offset-sm-3">Name</form:label>
-				<div class="col-sm-5">
-					<form:input path="name" class="form-control" />
-				</div>
-			</div>
+			
 			<div class="form-group row">
 				<form:label path="password" class="col-sm-2 offset-sm-3">Password</form:label>
 				<div class="col-sm-5">
 					<form:password path="password" class="form-control" />
 				</div>
 			</div>
+
+			<fieldset class="form-group">
+				<div class="row">
+					<legend class="col-form-label col-sm-2 offset-sm-3 pt-0">Account Type</legend>
+					<div class="col-sm-5">
+						<div class="form-check">
+							<form:radiobutton path="accType" value="Admin" label="Admin"
+								class="form-check-input" />
+						</div>
+						<div class="form-check">
+							<form:radiobutton path="accType" value="Customer" label="Customer"
+								class="form-check-input" />
+						</div>
+					</div>
+				</div>
+			</fieldset>
+
 			<div class="row">
 				<div class="col-sm-2 offset-sm-6">
 					<input type="submit" value="Login" class="btn btn-success" />
