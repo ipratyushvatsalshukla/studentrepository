@@ -11,17 +11,20 @@
 
 <title>Welcome</title>
 <style>
-   table, th, td {
-  border: 1px solid black;  
-margin-left: auto;  
-margin-right: auto;  
-border-collapse: collapse;    
-width: 500px;  
-text-align: center;  
-font-size: 20px;  
+	table, th, td {
+		border: 1px solid black;  
+		margin-left: auto;  
+		margin-right: auto;  
+		border-collapse: collapse;    
+		width: 500px;  
+		text-align: center;  
+		font-size: 20px;  
 }
-body{ margin:0 auto;
-text-align: center }
+	body{ 
+		background-color: #edf5f7; 
+		margin:0 auto;
+		text-align: center 
+}
 </style>
 </head>
 <body>
@@ -37,6 +40,8 @@ text-align: center }
 			<th>Employee id</th>
 			<th>Employee name</th>
 			<th>Employee Department</th>
+			<th colspan="2">control</th>
+			
 		<tr>
 			<c:forEach items="${list }" var="emp">
 				<tr>

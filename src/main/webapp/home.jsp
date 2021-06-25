@@ -10,8 +10,11 @@
 <title>Employee</title>
 <style>
   
-body{ margin:0 auto; 
-text-align: center}
+body{ 
+	margin:0 auto; 
+	text-align: center;
+	background-color: #edf5f7; 
+	}
 h1 {
 	margin: 1em 0 0.5em 0;
 	color: #343434;

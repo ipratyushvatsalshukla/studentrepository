@@ -14,12 +14,17 @@
 <style>
   
 
-body{ margin:0 auto;
-text-align: center;
-background-color: #e6edf7; 
+body{
+	margin:0 auto;
+	text-align: center;
+	background-color: #edf5f7; 
 }
-boxx{
-	margin: 300px;
+#boxx{
+	margin-left: 500px;
+	margin-right: 500px;
+	margin-up: 200px;
+	padding: 20px;	
+	
 }
 }
 </style>
@@ -27,13 +32,15 @@ boxx{
 <body>
 <div>
 	<form:form method="post" action="./validatelogin" modelAttribute="loginob"><br><br>
-	<div id="boxx">
+	<div id="boxx" class="border border-dark">
 		Employee ID: </br><form:input path="emp_id" class="form-control"/><br><br>
-		Employee Password:</br><form:input type="password" path="password" class="form-control"/><br><br>
+		Employee Password:</br><form:input type="password" path="password" class="form-control"/><br>
+		<button type="submit" class="btn btn-primary">Login</button>
+		<br>
 	</div>
 	
 
-  <button type="submit" class="btn btn-primary">Login</button>
+  
 
 </form:form>
 </div>
